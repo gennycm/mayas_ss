@@ -924,16 +924,3 @@ svg {
 
 .borrarBtn{
 }
-
-ul.notas{
-	color: #ffffff;
-	text-align: left;
-}
-
-.pasos_div{
-	height: 500px;
-}
-
-.pasos_div .col-md-3{
-	height: 100%;
-}
