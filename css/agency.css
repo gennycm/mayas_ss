@@ -713,16 +713,8 @@ svg {
 .justified {
 	text-align: justify;
 }
-.pasos_title {
-	color: white;
-}
-.paso_img {
-	position: relative;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	transform: translateX(-50%);
-}
+
+
 .text-centered {
 	text-align: center;
 }
@@ -937,3 +929,12 @@ ul.notas{
 .pasos_div .col-md-3{
 	height: 100%;
 }
+
+.steps_text p {
+	display: block;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.steps_title{
+	font-size: 2em;
+}
+
