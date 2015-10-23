@@ -12,7 +12,7 @@ $(function() {
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
-
+    });
 });
 
 // Highlight the top nav as scrolling occurs
@@ -29,6 +29,7 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
 
 
 /*Calculadora*/
@@ -99,7 +100,7 @@ var orig1 = "1 x 0 = 0";
 
 var totalRslt= 0, tNums6 = 0, tNums5 = 0, tNums4 = 0, tNums3 = 0, tNums2 = 0, tNums1 = 0;
 var mult6 = 0, mult5 = 0, mult4 = 0, mult3 = 0, mult2 = 0, mult1 = 0;
-var empty = "", last = 0;
+var empty = '', last = 0;
 var totalSum = 0, totalFn = 0, fnl1 = 0, fnl2 = 0, fnl3 = 0, fnl4 = 0, fnl5 = 0, fnl6 = 0; 
 var totalSn = 0, snl1 = 0, snl2 = 0, snl3 = 0, snl4 = 0, snl5 = 0, snl6 = 0;
 
@@ -388,7 +389,7 @@ function equalsCalc(){
 	totalFn = fnl1 + fnl2 + fnl3 + fnl4 + fnl5 +fnl6;
 	totalSn = snl1 + snl2 + snl3 + snl4 + snl5 + snl6;
 	if (operator === empty) {
-		alert("Oops! Debes seleccionar un operador :)");
+		alert("Debes seleccionar un operador :)");
 	}else{
 		switch(operator){
 			case "plus":
@@ -401,7 +402,7 @@ function equalsCalc(){
 				if (totalSum >= 0) {
 					console.log(totalFn + "-" + totalSn + "=" + totalSum);
 				}else{
-					alert("Oops! El número es negativo, los mayas no utilizaban #s negativos :D ");
+					alert("El número es negativo, los mayas no consideraban los números negativos :D ");
 					break;
 				}
 				break;
@@ -416,6 +417,7 @@ function equalsCalc(){
 				console.log(totalFn + "/" + totalSn + "=" + totalSum);
 				break;
 		}
+			console.log("calc Ultimo: " + last);
 		var lastFn = getLastPos(fNdropLvl1, fNdropLvl2, fNdropLvl3, fNdropLvl4, fNdropLvl5, fNdropLvl6);
 		var lastSn = getLastPos(sNdropLvl1, sNdropLvl2, sNdropLvl3, sNdropLvl4, sNdropLvl5, sNdropLvl6);
 		fillWithZeros(lastFn, fNdropLvl1, fNdropLvl2, fNdropLvl3, fNdropLvl4, fNdropLvl5, fNdropLvl6);
@@ -480,6 +482,8 @@ function equals () {
 }
 
 function getLastPos(l1,l2,l3,l4,l5,l6){
+	last=0;
+	console.log("6 is empty" + ( l6.innerHTML == empty));
 	if (l6.innerHTML === empty) {
 		if (l5.innerHTML === empty) {
 			if (l4.innerHTML === empty) {
@@ -565,10 +569,14 @@ var numArab;
 function equals_nA(){
 	numArab = document.getElementById('numArab').value;
 	if(!numArab){
-		alert("Oops! El campo está vacío. Escriba un número :)");
+		alert("El campo está vacío. Escriba un número :)");
 	}else{
-		console.log("Num:" + numArab);
-		revert(numArab,convLvl1, convLvl2, convLvl3, convLvl4, convLvl5, convLvl6);
+		if (numArab <= 63999999) {
+			console.log("Num:" + numArab);
+			revert(numArab,convLvl1, convLvl2, convLvl3, convLvl4, convLvl5, convLvl6);
+		}else{
+			alert("El número máximo para 6 niveles es 63999999 :(");
+		}
 	}
 	
 }
@@ -725,17 +733,32 @@ function resetCalc(){
     $('#plus').removeClass("selected_op");
     $('#times').removeClass("selected_op");
     $('#minus').removeClass("selected_op");
-  /*  r = ['cero','','','','',''];
+    r = ['cero','','','','',''];
+
     fillSquares(fNdropLvl1, r, 0);
-    fillSquares(fNdropLvl2, r, 1);
-    fillSquares(fNdropLvl3, r, 2);
-    fillSquares(fNdropLvl4, r, 3);
-    fillSquares(fNdropLvl5, r, 4);
-    fillSquares(fNdropLvl6, r, 5);
+    refresh_total_Nums(fNdropLvl2,r[1]);
+    refresh_total_Nums(fNdropLvl3,r[2]);
+    refresh_total_Nums(fNdropLvl4,r[3]);
+    refresh_total_Nums(fNdropLvl5,r[4]);
+    refresh_total_Nums(fNdropLvl6,r[5]);
+    
     fillSquares(sNdropLvl1, r, 0);
-    fillSquares(sNdropLvl2, r, 1);
-    fillSquares(sNdropLvl3, r, 2);
-    fillSquares(sNdropLvl4, r, 3);
-    fillSquares(sNdropLvl5, r, 4);
-    fillSquares(sNdropLvl6, r, 5); */
+    refresh_total_Nums(sNdropLvl2,r[1]);
+    refresh_total_Nums(sNdropLvl3,r[2]);
+    refresh_total_Nums(sNdropLvl4,r[3]);
+    refresh_total_Nums(sNdropLvl5,r[4]);
+    refresh_total_Nums(sNdropLvl6,r[5]);
+ 
+    fillSquares(resLvl1, r, 0);
+    fillSquares(resLvl2, r, 1);
+    fillSquares(resLvl3, r, 2);
+    fillSquares(resLvl4, r, 3);
+    fillSquares(resLvl5, r, 4);
+    fillSquares(resLvl6, r, 5); 
+    numArab = 0;
+    totalSum = 0;
+    lastFn = lastSn = last = 0;
+    totalFn = fnl1 = fnl2 = fnl3 = fnl4 = fnl5 =fnl6 = 0;
+	totalSn = snl1 = snl2 = snl3 = snl4 = snl5 = snl6 = 0;
+	console.log("reset Ultimo: " + last);
 }
