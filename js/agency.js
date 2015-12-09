@@ -234,7 +234,9 @@ $(document).ready(function() {
 
 		/*Calculadora Maya*/
 
-		/*First number*/
+
+
+	/*First number*/
 		fNdropLvl1.addEventListener('dragover', cancel);
 		fNdropLvl1.addEventListener('dragenter', cancel);
 		fNdropLvl1.addEventListener('drop', function (e) {
@@ -242,8 +244,8 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   fnl1 = 1 * parseInt($(draggedItem).data('num'));
-		   fNdropLvl1.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl1)'>" ; //
-		   console.log(fnl1);
+		   fNdropLvl1.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl1, fnl1)'>" ; //
+		 //  console.log(fnl1);
 		  return false;
 		});
 
@@ -254,8 +256,8 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   fnl2 = 20 * parseInt($(draggedItem).data('num'));
-		   fNdropLvl2.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl2)'>" ; //
-		   console.log(fnl2);
+		   fNdropLvl2.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl2, fnl2)'>" ; //
+		 //  console.log(fnl2);
 		  return false;
 		});
 
@@ -266,7 +268,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   fnl3 = 400 * parseInt($(draggedItem).data('num'));
-		   fNdropLvl3.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl3)'>" ; //
+		   fNdropLvl3.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl3, fnl3)'>" ; //
 		   console.log(fnl3);
 		  return false;
 		});
@@ -278,7 +280,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   fnl4 = 8000 * parseInt($(draggedItem).data('num'));
-		   fNdropLvl4.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl4)'>" ; //
+		   fNdropLvl4.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl4, fnl4)'>" ; //
 		   console.log(fnl4);
 		  return false;
 		});
@@ -290,7 +292,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   fnl5 = 160000 * parseInt($(draggedItem).data('num'));
-		   fNdropLvl5.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl5)'>" ; //
+		   fNdropLvl5.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl5, fnl5)'>" ; //
 		   console.log(fnl5);
 		  return false;
 		});
@@ -302,7 +304,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   fnl6 = 3200000 * parseInt($(draggedItem).data('num'));
-		   fNdropLvl6.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl6)'>" ; //
+		   fNdropLvl6.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(fNdropLvl6, fnl6)'>" ; //
 		   console.log(fnl6);
 		  return false;
 		});
@@ -315,7 +317,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   snl1 = 1 * parseInt($(draggedItem).data('num'));
-		   sNdropLvl1.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl1)'>" ; //
+		   sNdropLvl1.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl1, snl1)'>" ; //
 		   console.log(snl1);
 		  return false;
 		});
@@ -327,7 +329,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   snl2 = 20 * parseInt($(draggedItem).data('num'));
-		   sNdropLvl2.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl2)'>" ; //
+		   sNdropLvl2.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl2, snl2)'>" ; //
 		   console.log(snl2);
 		  return false;
 		});
@@ -339,7 +341,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   snl3 = 400 * parseInt($(draggedItem).data('num'));
-		   sNdropLvl3.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl3)'>" ; //
+		   sNdropLvl3.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl3, snl3)'>" ; //
 		   console.log(snl3);
 		  return false;
 		});
@@ -351,7 +353,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   snl4 = 8000 * parseInt($(draggedItem).data('num'));
-		   sNdropLvl4.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl4)'>" ; //
+		   sNdropLvl4.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl4, snl4)'>" ; //
 		   console.log(snl4);
 		  return false;
 		});
@@ -363,7 +365,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   snl5 = 160000 * parseInt($(draggedItem).data('num'));
-		   sNdropLvl5.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl5)'>" ; //
+		   sNdropLvl5.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl5, snl5)'>" ; //
 		   console.log(snl5);
 		  return false;
 		});
@@ -375,7 +377,7 @@ $(document).ready(function() {
 		   e.preventDefault();
 
 		   snl6 = 3200000 * parseInt($(draggedItem).data('num'));
-		   sNdropLvl6.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl6)'>" ; //
+		   sNdropLvl6.innerHTML = "<img class='nums' src='img/nums/"+ $(draggedItem).data('title') +".png' onClick='removeDragged(sNdropLvl6, snl6)'>" ; //
 		   console.log(snl6);
 		  return false;
 		});
@@ -402,6 +404,7 @@ function equalsCalc(){
 				if (totalSum >= 0) {
 					console.log(totalFn + "-" + totalSn + "=" + totalSum);
 				}else{
+					totalSum = 0;
 					alert("El número es negativo, los mayas no consideraban los números negativos :D ");
 					break;
 				}
@@ -483,7 +486,7 @@ function equals () {
 
 function getLastPos(l1,l2,l3,l4,l5,l6){
 	last=0;
-	console.log("6 is empty" + ( l6.innerHTML == empty));
+//	console.log("6 is empty" + ( l6.innerHTML == empty));
 	if (l6.innerHTML === empty) {
 		if (l5.innerHTML === empty) {
 			if (l4.innerHTML === empty) {
@@ -510,7 +513,7 @@ function getLastPos(l1,l2,l3,l4,l5,l6){
 		last = 6;
 	}
 
-	console.log("Ultimo: " + last);
+	//.log("Ultimo: " + last);
 	return last;
 }
 
@@ -558,10 +561,27 @@ function addZero(element){
 function removeNumber(element, tNumTxt, orig){
 	element.innerHTML = "";
 	refresh_total_Nums(tNumTxt,orig);
+
 }
 
-function removeDragged(element){
+function removeDragged(element, number){
 	element.innerHTML = "";
+	initializeValue(element);
+	console.log('elemento: ' + element.id);
+
+	if((element.id).indexOf("fN") > -1 ){
+		totalFn = totalFn - number;
+		console.log('number' + number);
+		console.log('totalFn' + totalFn);
+
+
+	}else{
+		if((element.id).indexOf("sN") > -1 ){
+			totalSn = totalSn - number;
+		}
+	}
+
+
 }
 
 var numArab;
@@ -761,4 +781,49 @@ function resetCalc(){
     totalFn = fnl1 = fnl2 = fnl3 = fnl4 = fnl5 =fnl6 = 0;
 	totalSn = snl1 = snl2 = snl3 = snl4 = snl5 = snl6 = 0;
 	console.log("reset Ultimo: " + last);
+}
+
+function initializeValue(element){
+	switch (element.id){
+
+		case 'fNdropLvl1':
+			fnl1 = 0;
+			break;
+		case 'fNdropLvl2':
+			fnl2 = 0;
+			break;
+		case 'fNdropLvl3':
+			fnl3 = 0;
+			break;
+		case 'fNdropLvl4':
+			fnl4 = 0;
+			break;
+		case 'fNdropLvl5':
+			fnl5 = 0;
+			break;
+		case 'fNdropLvl6':
+			fnl6 = 0;
+			break;
+		case 'sNdropLvl1':
+			snl1 = 0;
+			break;
+		case 'sNdropLvl2':
+			snl2 = 0;
+			break;
+		case 'sNdropLvl3':
+			snl3 = 0;
+			break;
+		case 'sNdropLvl4':
+			snl4 = 0;
+			break;
+		case 'sNdropLvl5':
+			snl5 = 0;
+			break;
+		case 'sNdropLvl6':
+			snl6 = 0;
+			break;
+
+
+	}
+
 }
